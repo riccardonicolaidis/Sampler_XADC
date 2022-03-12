@@ -4,6 +4,9 @@ The aim of this project is to create an easy way, HDL implemented, to visualise 
 
 ## Details about the project
 - The FPGA developement board used is the **ARTY A7** by **Digilent** on which there is tha Artix-7 35T FPGA by Xilinx
+![Arty A7 35T](https://digilent.com/reference/_media/reference/programmable-logic/arty/arty-0.png)
+
+
 - The software used is **Vivado 2021.1** by Xilinx 
 - The HDL language used is **SystemVerilog**
 
