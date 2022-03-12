@@ -119,7 +119,8 @@ endgenerate
 
 typedef enum {IDLE,
               SEND_TIME,
-              FILL_REGS, 
+              FILL_TIME,
+              FILL_PEAKS, 
               BCD_PEAK, 
               SEND_PEAK,
               FINAL_STATE} state_FSM;
@@ -144,7 +145,7 @@ always_ff @(posedge clk, posedge reset) begin
         case (state_reg) 
             IDLE : begin
                 if(!empty_fifo) begin
-                    state_reg             <= FILL_REGS;
+                    state_reg             <= FILL_TIME;
                     counter_digit         <= 8'd9;
                     CONTROL_STATE         <= 4'd0;
                 end else begin 
@@ -156,12 +157,20 @@ always_ff @(posedge clk, posedge reset) begin
                     CONTROL_STATE         <= 4'd1;
                 end
             end
-            FILL_REGS : begin
+            FILL_TIME : begin
                 time_event_reg   <= time_event_fifo;
-                A_peak_event_reg <= A_peak_event_fifo;
-                read_pulse_reg   <= 1'b1;
-                state_reg        <= SEND_TIME;
+                state_reg        <= FILL_PEAKS;
                 CONTROL_STATE    <= 4'd2;
+                counter_channel  <= 0;
+            end
+            FILL_PEAKS : begin 
+                if(counter_channel <= (N_CH-1)) begin 
+                    A_peak_event_reg[counter_channel][N_P-1:0] <= A_peak_event_fifo[counter_channel][N_P-1:0];
+                    counter_channel                            <= counter_channel + 1;
+                end else begin 
+                    read_pulse_reg   <= 1'b1;
+                    state_reg        <= SEND_TIME;
+                end
             end
             SEND_TIME : begin
                 if(read_pulse_reg) begin
