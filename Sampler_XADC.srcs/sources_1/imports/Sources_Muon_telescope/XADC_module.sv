@@ -153,7 +153,6 @@ assign daddr_in = {2'b00, channel};
 // - 9 in total
 
 logic [4:0] identifier_ch [8:0];      // IDENTIFIERS FOR ALL 9 CHANNELS USED
-logic [4:0] id_real [N_CH-1:0];       // IF WE USE ONLY A SUBSET WE NEED TO REDUCE THE IDENTIFIER ARRAY
 
 assign identifier_ch[0] = 5'b10100; 
 assign identifier_ch[1] = 5'b10101;
@@ -165,15 +164,10 @@ assign identifier_ch[6] = 5'b11100;
 assign identifier_ch[7] = 5'b11101;
 assign identifier_ch[8] = 5'b11110;
 
-// Combinational logic to select only the desired channels (the desired identifiers)
-genvar i;
-generate
-    for(i=0; i<=(N_CH-1); i = i + 1) begin
-        assign id_real[i][4:0] = identifier_ch[i][4:0];
-    end
-endgenerate
+
 
 // ARRAY OF DEMULTIPLEXERS TO BUILD UP THE PARALLEL PIPELINE FOR DSP
+genvar i;
 generate
     for(i=0; i<=(N_CH-1);i=i+1) begin : Demux_generation
         adc_demux 
@@ -187,9 +181,8 @@ generate
             .channel(channel),          // channel 5 bits from XADC (to be compared with the id)
             .adc_data(adc_data),        // adc data bus from the xadc (to be acquired)
             .rdy(rdy),                  // ready signal 
-            .identifier_ch(id_real[i]),    // identifier of the demultiplexed channel 
-
-            .adc_data_demux(A[i]),         // data bus array containing the demultiplexed lines 
+            .identifier_ch(identifier_ch[i][4:0]),    // identifier of the demultiplexed channel 
+            .adc_data_demux(A[i][(N_P-1):0]),         // data bus array containing the demultiplexed lines 
             .data_flag(A_pulse[i])         // demultiplexed pulses lines (sampling frequencies)
         );
     end

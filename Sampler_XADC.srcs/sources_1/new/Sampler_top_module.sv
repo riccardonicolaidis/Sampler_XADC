@@ -9,7 +9,7 @@ module Sampler_top_module
 );
 
 // PARAMETERS 
-parameter N_CH = 2;  // Number of channels (XADC)
+parameter N_CH = 4;  // Number of channels (XADC)
 parameter N_T = 32;  // Number of bits from TIME MEASURING
 parameter N_P = 12;  // Number of bits for peak detection
 
@@ -60,7 +60,7 @@ XADC_WRAPPING_CIRCUIT
     .vp_in(vp_in),
     .vn_in(vn_in),
     .A(A),             // A Digitalized 12-bit OUT
-    .A_pulse(A_pulse)  // A ready pulse 
+    .A_pulse()  // A ready pulse 
 );
 
 
@@ -71,14 +71,14 @@ Pulse_generator PULSE_GEN_10Hz
 (
     .clk(clk),
     .reset(reset_low), 
-    .period(30'd10_000_000),
+    .period(30'd100000000), // 100_000_000
     .pulse_out(Visualize_pulse)
 );
 
 genvar i;
 generate
     for(i=0; i<= (N_CH-1); i=i+1) begin
-        assign A_unipolar[i] = { (!A[i][N_P-1]) , A[i][(N_P-2):0]};
+        assign A_unipolar[i] = {(!A[i][N_P-1]),(A[i][(N_P-2):0])};
     end
 endgenerate 
 
@@ -96,7 +96,7 @@ UART_DISPLAY
     .clk(clk),
     .reset(reset_low),
     .time_event(time_ms),        // Time of the event
-    .A_peak_event(A_unipolar),            // Peak values array of the event
+    .A_peak_event(A_unipolar[(N_CH-1):0]),            // Peak values array of the event
     .DAQ_pulse(Visualize_pulse), // Output pulse to send data to memory or uart
     .tx(tx),
     .control_state(led)

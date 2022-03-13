@@ -144,17 +144,19 @@ always_ff @(posedge clk, posedge reset) begin
     else begin
         case (state_reg) 
             IDLE : begin
+                Print_pulse               <= 1'b0;
+                Printer                   <= 0;
+                counter_channel           <= 0;
+                start_conversion_peak     <= 1'b0;
+                read_pulse_reg            <= 1'b0;
+                time_event_reg            <= 0;
+                CONTROL_STATE             <= 4'd0;
                 if(!empty_fifo) begin
                     state_reg             <= FILL_TIME;
                     counter_digit         <= 8'd9;
-                    CONTROL_STATE         <= 4'd0;
-                end else begin 
-                    counter_channel       <= 0;
-                    time_event_reg        <= 0;
-                    read_pulse_reg        <= 0;
-                    counter_digit         <= 8'd0;
-                    start_conversion_peak <= 1'b0;
                     CONTROL_STATE         <= 4'd1;
+                end else begin
+                    counter_digit         <= 8'd0;
                 end
             end
             FILL_TIME : begin
@@ -244,7 +246,6 @@ always_ff @(posedge clk, posedge reset) begin
                 end else begin
                     if(!Print_pulse) begin 
                         Printer               <= wb_NEW_LINE;
-                        Print_pulse           <= 1'b1;
                         state_reg             <= FINAL_STATE;
                         counter_digit         <= 0;
                         counter_channel       <= 0;
@@ -255,7 +256,7 @@ always_ff @(posedge clk, posedge reset) begin
             end
             FINAL_STATE : begin
                 state_reg             <= IDLE;
-                Print_pulse           <= 1'b0;
+                Print_pulse           <= 1'b1;
                 start_conversion_peak <= 1'b0;
                 counter_channel       <= 0;
                 counter_digit         <= 0;
