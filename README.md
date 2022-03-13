@@ -4,10 +4,13 @@ The aim of this project is to create an easy way, HDL implemented, to visualise 
 
 ## Details about the project
 - The FPGA developement board used is the **ARTY A7** by **Digilent** on which there is tha Artix-7 35T FPGA by Xilinx
+
 ![Arty A7 35T](https://digilent.com/reference/_media/reference/programmable-logic/arty/arty-0.png)
 
-
 - The software used is **Vivado 2021.1** by Xilinx 
+
+![Vivado logo](https://www.xilinx.com/content/dam/xilinx/imgs/products/vivado/vivado-ml/vivado-hero-logo-web.png)
+
 - The HDL language used is **SystemVerilog**
 
 ## Functionalities of the developed platform
@@ -21,6 +24,9 @@ The aim of this project is to create an easy way, HDL implemented, to visualise 
 ## Some resources
 Here some useful online resources which I have used to develope this simple ADC sampler:
 - Digilent reference webpage (Arty A7) : https://digilent.com/reference/programmable-logic/arty-a7/start
+
+![Digilent logo](https://cdn11.bigcommerce.com/s-7gavg/images/stencil/original/digilent-logo_ni_2021-260px_1_1627086513__23106.original.png)
+
 - Arty A7 reference manual : https://digilent.com/reference/programmable-logic/arty-a7/reference-manual
 - OpenCores (a useful web platform where it is possible to find HDL open source cores) : https://opencores.org/
 - Companion website for the book **FPGA prototyping by SystemVerilog examples** by Dr. Chu : https://academic.csuohio.edu/chu_p/index.html
