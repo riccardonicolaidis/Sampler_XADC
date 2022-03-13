@@ -21,6 +21,22 @@ The aim of this project is to create an easy way, HDL implemented, to visualise 
 - A "Pulse generator" is aimed to the generation of the signal triggering the sampling process. Here, by sampling process, I mean that the pulse will enable the printer to send the data via the UART cable to a computer.
 - To read the data from the UART cable it is possible to use a terminal like "PuTTY".
 
+
+## IP catalogue
+To build up the design I have used some IPs by Xilinx. These modules can be configurated from the **IP catalogue** in **Vivado**. 
+To create your personal module follow these steps:
+- Click on IP catalogue in the **Project flow navigator**
+- Search for the desired IP. In our case the IPs used are the **XADC Wiziard** and the **FIFO generator**
+- Click on the IP desired
+- Customize the IP according to the fatures required
+- Click on **Generate IP instance**
+- Then you have to generate and synthesise the required files (Click on **Generate** in the pop-up window). 
+- In the file manager, where you can see the **Source Hierarchy** click on the **IP sources** panel.
+- In the path: IP_COMPONENT_NAME >> Instantiation template >> ...    youìll find the two **Instantiation templates**, one written in **Verilog HDL** and the other in **VHDL**. Now you can instantiate your customised module into your design. 
+
+
+
+
 ## Some resources
 Here some useful online resources which I have used to develope this simple ADC sampler:
 - Digilent reference webpage (Arty A7) : https://digilent.com/reference/programmable-logic/arty-a7/start
