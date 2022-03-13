@@ -1,4 +1,4 @@
-# parametrised ADC sampler using the ARTY A7 developement board
+# Parametrised ADC sampler using the ARTY A7 developement board
 ## Introduction
 The aim of this project is to create an easy way, HDL implemented, to visualise data coming from the analog to digital converter (ADC) mounted onto the FPGA developement board. In this way, it is possible to characterise the ADC, perform some tests on the ADC performances, test some Digital Signal Processing (DSP) modules or to sample analog signals.
 

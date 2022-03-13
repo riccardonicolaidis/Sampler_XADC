@@ -10,12 +10,12 @@ module Binary_to_BCD
    output                        o_DV
    );
    
-  parameter s_IDLE              = 3'b000;
-  parameter s_SHIFT             = 3'b001;
-  parameter s_CHECK_SHIFT_INDEX = 3'b010;
-  parameter s_ADD               = 3'b011;
-  parameter s_CHECK_DIGIT_INDEX = 3'b100;
-  parameter s_BCD_DONE          = 3'b101;
+  localparam s_IDLE              = 3'b000;
+  localparam s_SHIFT             = 3'b001;
+  localparam s_CHECK_SHIFT_INDEX = 3'b010;
+  localparam s_ADD               = 3'b011;
+  localparam s_CHECK_DIGIT_INDEX = 3'b100;
+  localparam s_BCD_DONE          = 3'b101;
    
   reg [2:0] r_SM_Main = s_IDLE;
    
