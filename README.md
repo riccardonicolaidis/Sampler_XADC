@@ -13,6 +13,8 @@ The aim of this project is to create an easy way, HDL implemented, to visualise 
 
 - The HDL language used is **SystemVerilog**
 
+--------------------------
+
 ## Functionalities of the developed platform
 - Using the IP integrator (IP catalogue) in Vivado, it has been possible to instantiate the XADC module into the design. The Artix-7 FPGA has inside the XADC chip which is the analog to digital converter provided by Xilinx.
 - A particular Wrapping circuit has been built in order to create a simple interface accessible from other eventual modules.
@@ -35,20 +37,33 @@ The numbers displayed represents the following data:
 - Fourth column: The digitalised output from the pin A1.
 - Fifth column: Eventual digitalised output from pin A2. In this case the XADC is configured only for the acquisition of the channels A0 and A1. Therefore the last column is populated by the constant value 2048 (see later for the reason why it is 2048 and not 0).
 
+----------------------------
+
 ## Important remark on the number convention adopted.
 - The XADC has been configured in the "Bipolar mode". This means that it can digitalise voltage signals in the range -1.5 V to +1.5 V. The resultant digitalised number is returned in the **bipolar binary notation**. This means that a negative signal is coded with the **2's complement**. 
 - Since in the output I didn't want to print the + and - characters, I translated the numbers from the bipolar notation to the unipolar notation. Then, I had to negate the most significant bit. To understand better see the following example:
 
-EXAMPLE: 
+EXAMPLE no.1 : 
 1. Input = 0 V
 2. Digitalised input = 000000000000
 3. From bipolar notation (000000000000) to bipolar notation 1000000000000
 4. From binary to decimal we obtain 2^(12-1) = 2^11 = 2048
 
+EXAMPLE no.2: 
+
+| Bipolar | Bipolar decimal | Unipolar | Unipolar decimal |
+|---------|-----------------|----------|------------------|
+| 011     | 3               | 111      |  7               |
+| 010     | 2               | 110      |  6               |
+| 001     | 1               | 101      |  5               |
+| 000     | 0               | 100      |  4               |
+| 111     | -1              | 011      |  3               |
+| 110     | -2              | 010      |  2               |
+| 101     | -3              | 001      |  1               |
+| 100     | -4              | 000      |  0               |
 
 
-
-
+---------------------------
 ## IP catalogue
 To build up the design I have used some IPs by Xilinx. These modules can be configurated from the **IP catalogue** in **Vivado**. 
 To create your personal module follow these steps:
@@ -61,9 +76,7 @@ To create your personal module follow these steps:
 - In the file manager, where you can see the **Source Hierarchy** click on the **IP sources** panel.
 - In the path: IP_COMPONENT_NAME >> Instantiation template >> ...    youìll find the two **Instantiation templates**, one written in **Verilog HDL** and the other in **VHDL**. Now you can instantiate your customised module into your design. 
 
-
-
-
+-----------------------------
 ## Some resources
 Here some useful online resources which I have used to develope this simple ADC sampler:
 - Digilent reference webpage (Arty A7) : https://digilent.com/reference/programmable-logic/arty-a7/start
@@ -76,6 +89,8 @@ Here some useful online resources which I have used to develope this simple ADC 
 - Xilinx Vivado website: https://www.xilinx.com/products/design-tools/vivado.html
 - Digilent GitHub repositories : https://github.com/digilent
 
+
+---------------------------------
 ## How to create a Vivado project
 To build up a Vivado project, the following operations are required:
 - Open Vivado
