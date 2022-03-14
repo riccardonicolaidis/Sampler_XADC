@@ -22,6 +22,33 @@ The aim of this project is to create an easy way, HDL implemented, to visualise 
 - To read the data from the UART cable it is possible to use a terminal like "PuTTY".
 
 
+- In this specific implementation, the sampling frequency (in this case I am referring to the samples displayed on the PC screen and not the actual sampling frequency of the XADC) is 1 Hz. However, this frequency can be changed in the top module changing the period of the PULSE_GENERATOR. 
+
+
+In the picture below you can see the data sent by the FPGA via the UART cable.
+
+![PuTTY terminal window](Terminal_output.png) 
+
+The numbers displayed represents the following data:
+- First column: Time expressed in milliseconds. Since the sampling frequency set up is 1Hz you can see that the least significant digits are zero. 
+- Second and third column: The digitalised output from the pin A0. (Sincerely I don't know why the "Printer module" is sending this channel twice.) 
+- Fourth column: The digitalised output from the pin A1.
+- Fifth column: Eventual digitalised output from pin A2. In this case the XADC is configured only for the acquisition of the channels A0 and A1. Therefore the last column is populated by the constant value 2048 (see later for the reason why it is 2048 and not 0).
+
+## Important remark on the number convention adopted.
+- The XADC has been configured in the "Bipolar mode". This means that it can digitalise voltage signals in the range -1.5 V to +1.5 V. The resultant digitalised number is returned in the **bipolar binary notation**. This means that a negative signal is coded with the **2's complement**. 
+- Since in the output I didn't want to print the + and - characters, I translated the numbers from the bipolar notation to the unipolar notation. Then, I had to negate the most significant bit. To understand better see the following example:
+
+EXAMPLE: 
+1. Input = 0 V
+2. Digitalised input = 000000000000
+3. From bipolar notation (000000000000) to bipolar notation 1000000000000
+4. From binary to decimal we obtain 2^(12-1) = 2^11 = 2048
+
+
+
+
+
 ## IP catalogue
 To build up the design I have used some IPs by Xilinx. These modules can be configurated from the **IP catalogue** in **Vivado**. 
 To create your personal module follow these steps:
