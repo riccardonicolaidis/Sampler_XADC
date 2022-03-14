@@ -61,6 +61,8 @@ logic           Print_pulse;     // Segnale  reg
 
 // Registri
 logic start_conversion_peak;  // reg
+logic Converter_peak_assigned;
+logic [7:0] counter_pause_peak_BCD;
 wire  BCD_peak_ready;  // wire
 logic [N_P-1:0] Converter_peak;  // reg
 wire  [4*(N_DIGIT_OUT_PEAK)-1:0] BCD_peak; // wire bus
@@ -97,10 +99,10 @@ generate
         (
             .clk(clk),                            // input wire clk
             .srst(reset),                         // input wire srst
-            .din(A_peak_event[i][N_P-1:0]),       // input wire [11 : 0] din
+            .din(A_peak_event[i]),                // input wire [11 : 0] din
             .wr_en(DAQ_pulse),                    // input wire wr_en
             .rd_en(read_pulse_reg),               // input wire rd_en
-            .dout(A_peak_event_fifo[i][N_P-1:0]), // output wire [11 : 0] dout
+            .dout(A_peak_event_fifo[i]),          // output wire [11 : 0] dout
             .full(),                              // output wire full
             .empty()                              // output wire empty
         );
@@ -132,14 +134,15 @@ state_FSM state_reg;
 // Finite state machine
 always_ff @(posedge clk, posedge reset) begin
     if(reset) begin
-        state_reg            <= IDLE;
-        Printer              <= 0;
-        Print_pulse          <= 0;
-        time_event_reg       <= 0;                // Time of the event
-        read_pulse_reg       <= 0;            // reg
-        counter_digit        <= 0;      // Conta le cifre reg
-        counter_channel      <= 0;    // Conta i canali regstart_conversion_peak;  // reg
-        Converter_peak       <= 0;  // reg
+        state_reg              <= IDLE;
+        Printer                <= 0;
+        Print_pulse            <= 0;
+        time_event_reg         <= 0;                // Time of the event
+        read_pulse_reg         <= 0;            // reg
+        counter_digit          <= 0;      // Conta le cifre reg
+        counter_channel        <= 0;    // Conta i canali regstart_conversion_peak;  // reg
+        Converter_peak         <= 0;  // reg
+        counter_pause_peak_BCD <= 0;
     end
     else begin
         case (state_reg) 
@@ -148,8 +151,10 @@ always_ff @(posedge clk, posedge reset) begin
                 Printer                   <= 0;
                 counter_channel           <= 0;
                 start_conversion_peak     <= 1'b0;
+                Converter_peak_assigned   <= 1'b0;
                 read_pulse_reg            <= 1'b0;
                 time_event_reg            <= 0;
+                counter_pause_peak_BCD    <= 0;
                 CONTROL_STATE             <= 4'd0;
                 if(!empty_fifo) begin
                     state_reg             <= FILL_TIME;
@@ -167,8 +172,8 @@ always_ff @(posedge clk, posedge reset) begin
             end
             FILL_PEAKS : begin 
                 if(counter_channel <= (N_CH-1)) begin 
-                    A_peak_event_reg[counter_channel][N_P-1:0] <= A_peak_event_fifo[counter_channel][N_P-1:0];
-                    counter_channel                            <= counter_channel + 1;
+                    A_peak_event_reg[counter_channel] <= A_peak_event_fifo[counter_channel];
+                    counter_channel                   <= counter_channel + 1;
                 end else begin 
                     read_pulse_reg   <= 1'b1;
                     state_reg        <= SEND_TIME;
@@ -190,12 +195,12 @@ always_ff @(posedge clk, posedge reset) begin
                                   counter_digit <= counter_digit - 8'd1;
                                   CONTROL_STATE <= 4'd4;
                 end else if((counter_digit == 8'd0) & (!Print_pulse)) begin
-                                  state_reg             <= BCD_PEAK;
-                                  Print_pulse           <= 1'b0;
-                                  counter_channel       <= 0;
-                                  Converter_peak        <= 0;
-                                  start_conversion_peak <= 1'b0;
-                                  CONTROL_STATE         <= 4'd5;
+                                  state_reg               <= BCD_PEAK;
+                                  counter_channel         <= 0;
+                                  Converter_peak          <= 0;
+                                  start_conversion_peak   <= 1'b0;
+                                  Converter_peak_assigned <= 1'b0;
+                                  CONTROL_STATE           <= 4'd5;
                 end
                 if (Print_pulse) begin
                     Print_pulse <= 1'b0;
@@ -203,10 +208,18 @@ always_ff @(posedge clk, posedge reset) begin
             end
             BCD_PEAK : begin
                 if (counter_channel <= (N_CH - 1)) begin
-                    if(!start_conversion_peak) begin
-                        Converter_peak        <= A_peak_event_reg[counter_channel];
-                        start_conversion_peak <= 1'b1;
-                        CONTROL_STATE         <= 4'd6;
+                    if((!start_conversion_peak) & (!Converter_peak_assigned)) begin
+                        Converter_peak          <= A_peak_event_reg[counter_channel];
+                        Converter_peak_assigned <= 1'b1;
+                        counter_pause_peak_BCD  <= 8'd10;
+                        CONTROL_STATE           <= 4'd6;
+                    end else if((!start_conversion_peak) & (Converter_peak_assigned)) begin 
+                        if( counter_pause_peak_BCD  == 8'd0) begin 
+                            Converter_peak_assigned <= 1'b0;
+                            start_conversion_peak   <= 1'b1;
+                        end else begin 
+                            counter_pause_peak_BCD <= counter_pause_peak_BCD - 8'd1;
+                        end 
                     end else if(start_conversion_peak & BCD_peak_ready) begin
                         A_peak_event_BCD[counter_channel] <= BCD_peak;
                         start_conversion_peak             <= 1'b0;

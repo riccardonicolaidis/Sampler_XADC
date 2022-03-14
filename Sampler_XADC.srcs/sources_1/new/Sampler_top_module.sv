@@ -71,9 +71,10 @@ Pulse_generator PULSE_GEN_10Hz
 (
     .clk(clk),
     .reset(reset_low), 
-    .period(30'd100000000), // 100_000_000
+    .period(30'd10000000), // 100_000_000
     .pulse_out(Visualize_pulse)
 );
+
 
 genvar i;
 generate
@@ -96,7 +97,7 @@ UART_DISPLAY
     .clk(clk),
     .reset(reset_low),
     .time_event(time_ms),        // Time of the event
-    .A_peak_event(A_unipolar[(N_CH-1):0]),            // Peak values array of the event
+    .A_peak_event(A_unipolar),            // Peak values array of the event
     .DAQ_pulse(Visualize_pulse), // Output pulse to send data to memory or uart
     .tx(tx),
     .control_state(led)

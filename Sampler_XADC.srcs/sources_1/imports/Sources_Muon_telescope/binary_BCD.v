@@ -33,10 +33,12 @@ module Binary_to_BCD
   reg [7:0]                  r_Loop_Count = 0;
  
   wire [3:0]                 w_BCD_Digit;
-  reg                        r_DV = 1'b0;                       
+  reg                        r_DV = 1'b0;       
+
+  reg i_Start_old; // Old value to be sensitive to transitions and not to values                
     
   always @(posedge i_Clock)
-    begin
+  begin
  
       case (r_SM_Main) 
   
@@ -45,7 +47,7 @@ module Binary_to_BCD
           begin
             r_DV <= 1'b0;
              
-            if (i_Start == 1'b1)
+            if ((i_Start) & (!i_Start_old))
               begin
                 r_Binary  <= i_Binary;
                 r_SM_Main <= s_SHIFT;
@@ -125,7 +127,8 @@ module Binary_to_BCD
           r_SM_Main <= s_IDLE;
             
       endcase
-    end // always @ (posedge i_Clock)  
+    i_Start_old <= i_Start;
+  end // always @ (posedge i_Clock)  
  
    
   assign w_BCD_Digit = r_BCD[r_Digit_Index*4 +: 4];

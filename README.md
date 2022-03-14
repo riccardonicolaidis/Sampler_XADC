@@ -32,10 +32,10 @@ In the picture below you can see the data sent by the FPGA via the UART cable.
 ![PuTTY terminal window](Terminal_output.png) 
 
 The numbers displayed represents the following data:
-- First column: Time expressed in milliseconds. Since the sampling frequency set up is 1Hz you can see that the least significant digits are zero. 
-- Second and third column: The digitalised output from the pin A0. (Sincerely I don't know why the "Printer module" is sending this channel twice.) 
-- Fourth column: The digitalised output from the pin A1.
-- Fifth column: Eventual digitalised output from pin A2. In this case the XADC is configured only for the acquisition of the channels A0 and A1. Therefore the last column is populated by the constant value 2048 (see later for the reason why it is 2048 and not 0).
+- First column: Time expressed in milliseconds. Since the sampling frequency set up is 10Hz you can see that the least significant digits are zero. 
+- Second column: The digitalised output from the pin A0.
+- Third column: The digitalised output from the pin A1.
+- Fourth and Fifth column: Eventual digitalised output from pin A2 and A3. In this case the XADC is configured only for the acquisition of the channels A0 and A1. Therefore the two last columns are populated by the constant value 2048 (see later for the reason why it is 2048 and not 0).
 
 ----------------------------
 
@@ -75,6 +75,25 @@ To create your personal module follow these steps:
 - Then you have to generate and synthesise the required files (Click on **Generate** in the pop-up window). 
 - In the file manager, where you can see the **Source Hierarchy** click on the **IP sources** panel.
 - In the path: IP_COMPONENT_NAME >> Instantiation template >> ...    youìll find the two **Instantiation templates**, one written in **Verilog HDL** and the other in **VHDL**. Now you can instantiate your customised module into your design. 
+
+### Important note for the XADC Instantiation!
+If you change the number of channels in the top module, then you need to open the "XADC Wiziard" in Vivado software, change the 
+"Sequenced channels" and re-run the synthesis of the component XADC. When the synthesis is finished you need to open the file "NAME_stub.v"
+in the IP resources, copy the code 
+```
+      .INIT_40(16'h0000),
+      .INIT_41(16'h21A0),
+      .INIT_42(16'h0400),
+      ... 
+```
+and replace the part contained in the file "NAME_netlist.v". This is required because the XADC module comes from an IP by Xilinx and
+to set up properly the sequencer settings you need to generate the encrypted sources. In principle one could change by hand the 
+registers in the instantiation (.INIT_40(1b'h...)). This procedure, however, is quite tedious since it is required to know the meaning
+of all these registers. The procedure exploiting the XADC wiziard is more "user friendly" even if it is a bit longer. After generating
+the correct template for the XADC module you need to "disable the source file" using the Vivado navigation menu. This because in the 
+xadc_netlist.v file there are the instructions used by vivado to generate the required sources and so the IP generated via the IP
+catalogue is unnecessary.
+
 
 -----------------------------
 ## Some resources
