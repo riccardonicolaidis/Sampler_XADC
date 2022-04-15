@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1647259708" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Sampler_top_module.dcp">
+  <File Type="PA-TCL" Name="Sampler_top_module.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Sampler_top_module_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Sampler_top_module_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Sampler_top_module.vds"/>
+  <File Type="RDS-UTIL" Name="Sampler_top_module_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Sampler_top_module_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Sampler_top_module.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Sampler_top_module_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Sampler_top_module_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/binary_BCD.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/xadc__netlist.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/xadc__netlist.v"/>
+        <Attr Name="ImportTime" Val="1646819327"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/Frequency_Divider.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/Frequency_Divider.sv"/>
+        <Attr Name="ImportTime" Val="1646147462"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/Printer_uart.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/Printer_uart.sv"/>
+        <Attr Name="ImportTime" Val="1646776807"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Pulse_generator.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/SynchroCounter_4_bit.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGAtmos_pARTYcle_detector/FPGAtmos_pARTYcle_detector.srcs/sources_1/imports/Sources_Muon_telescope/SynchroCounter_4_bit.sv"/>
+        <Attr Name="ImportTime" Val="1646853984"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/XADC_module.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/XADC_module.sv"/>
+        <Attr Name="ImportTime" Val="1646824639"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/adc_demux.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/adc_demux.sv"/>
+        <Attr Name="ImportTime" Val="1646824750"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/baud_gen.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/baud_gen.sv"/>
+        <Attr Name="ImportTime" Val="1645992713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/time_measurement.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGAtmos_pARTYcle_detector/FPGAtmos_pARTYcle_detector.srcs/sources_1/imports/Sources_Muon_telescope/time_measurement.sv"/>
+        <Attr Name="ImportTime" Val="1646854086"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/uart.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/uart.sv"/>
+        <Attr Name="ImportTime" Val="1646256067"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/uart_rx.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/uart_rx.sv"/>
+        <Attr Name="ImportTime" Val="1645992713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/uart_tx.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/uart_tx.sv"/>
+        <Attr Name="ImportTime" Val="1645992713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Sampler_top_module.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/fifo.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/fifo.sv"/>
+        <Attr Name="ImportTime" Val="1645992713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/fifo_ctrl.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/fifo_ctrl.sv"/>
+        <Attr Name="ImportTime" Val="1645992713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/reg_file.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/reg_file.sv"/>
+        <Attr Name="ImportTime" Val="1645992713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/binary_BCD.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/binary_BCD.sv"/>
+        <Attr Name="ImportTime" Val="1646770699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/Buffers_reg.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/Buffers_reg.sv"/>
+        <Attr Name="ImportTime" Val="1646664836"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/DC_blocker.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/DC_blocker.sv"/>
+        <Attr Name="ImportTime" Val="1646836811"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources_Muon_telescope/Monostable_rise_only.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/Monostable_rise_only.sv"/>
+        <Attr Name="ImportTime" Val="1646661191"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="Sampler_top_module"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Sources_Muon_telescope/Arty-A7-35-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/Sources_Muon_telescope/Arty-A7-35-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1646670368"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/Sampler_top_module.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_generator_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_generator_time"/>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_generator_uart"/>
+</GenRun>

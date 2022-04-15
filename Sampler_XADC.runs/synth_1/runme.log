@@ -1,0 +1,437 @@
+
+*** Running vivado
+    with args -log Sampler_top_module.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Sampler_top_module.tcl
+
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source Sampler_top_module.tcl -notrace
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1453.156 ; gain = 0.000
+Command: read_checkpoint -auto_incremental -incremental C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/utils_1/imports/synth_1/Sampler_top_module.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/utils_1/imports/synth_1/Sampler_top_module.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top Sampler_top_module -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 16408
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1453.156 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Sampler_top_module' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/new/Sampler_top_module.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Module_Time_Measurement' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/time_measurement.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Module_FrequencyDivider' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/Frequency_Divider.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Module_FrequencyDivider' (1#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/Frequency_Divider.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Module_SynchroCounter_4_bit' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/SynchroCounter_4_bit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Module_SynchroCounter_4_bit' (2#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/SynchroCounter_4_bit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Module_Time_Measurement' (3#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/time_measurement.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'XADC_module' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/XADC_module.sv:73]
+	Parameter N_CH bound to: 4 - type: integer 
+	Parameter N_P bound to: 12 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'adc_demux' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/adc_demux.sv:1]
+	Parameter N_P bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adc_demux' (4#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/adc_demux.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'xadc_wiz_0' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/xadc__netlist.v:53]
+INFO: [Synth 8-6157] synthesizing module 'XADC' [D:/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:110147]
+	Parameter INIT_40 bound to: 16'b0000000000000000 
+	Parameter INIT_41 bound to: 16'b0010000100111111 
+	Parameter INIT_42 bound to: 16'b0000010000000000 
+	Parameter INIT_43 bound to: 16'b0000000000000000 
+	Parameter INIT_44 bound to: 16'b0000000000000000 
+	Parameter INIT_45 bound to: 16'b0000000000000000 
+	Parameter INIT_46 bound to: 16'b0000000000000000 
+	Parameter INIT_47 bound to: 16'b0000000000000000 
+	Parameter INIT_48 bound to: 16'b0000000000000000 
+	Parameter INIT_49 bound to: 16'b0000000000110000 
+	Parameter INIT_4A bound to: 16'b0000000000000000 
+	Parameter INIT_4B bound to: 16'b0000000000000000 
+	Parameter INIT_4C bound to: 16'b0000000000000000 
+	Parameter INIT_4D bound to: 16'b0000000000110000 
+	Parameter INIT_4E bound to: 16'b0000000000000000 
+	Parameter INIT_4F bound to: 16'b0000000000000000 
+	Parameter INIT_50 bound to: 16'b1011010111101101 
+	Parameter INIT_51 bound to: 16'b0101011111100100 
+	Parameter INIT_52 bound to: 16'b1010000101000111 
+	Parameter INIT_53 bound to: 16'b1100101000110011 
+	Parameter INIT_54 bound to: 16'b1010100100111010 
+	Parameter INIT_55 bound to: 16'b0101001011000110 
+	Parameter INIT_56 bound to: 16'b1001010101010101 
+	Parameter INIT_57 bound to: 16'b1010111001001110 
+	Parameter INIT_58 bound to: 16'b0101100110011001 
+	Parameter INIT_59 bound to: 16'b0000000000000000 
+	Parameter INIT_5A bound to: 16'b0000000000000000 
+	Parameter INIT_5B bound to: 16'b0000000000000000 
+	Parameter INIT_5C bound to: 16'b0101000100010001 
+	Parameter INIT_5D bound to: 16'b0000000000000000 
+	Parameter INIT_5E bound to: 16'b0000000000000000 
+	Parameter INIT_5F bound to: 16'b0000000000000000 
+	Parameter IS_CONVSTCLK_INVERTED bound to: 1'b0 
+	Parameter IS_DCLK_INVERTED bound to: 1'b0 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+	Parameter SIM_MONITOR_FILE bound to: design.txt - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'XADC' (5#1) [D:/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:110147]
+INFO: [Synth 8-6155] done synthesizing module 'xadc_wiz_0' (6#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/xadc__netlist.v:53]
+WARNING: [Synth 8-7071] port 'vauxn8' of module 'xadc_wiz_0' is unconnected for instance 'xadc_unit' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/XADC_module.sv:95]
+WARNING: [Synth 8-7071] port 'vauxp9' of module 'xadc_wiz_0' is unconnected for instance 'xadc_unit' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/XADC_module.sv:95]
+WARNING: [Synth 8-7023] instance 'xadc_unit' of module 'xadc_wiz_0' has 49 connections declared, but only 47 given [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/XADC_module.sv:95]
+INFO: [Synth 8-6155] done synthesizing module 'XADC_module' (7#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/XADC_module.sv:73]
+INFO: [Synth 8-6157] synthesizing module 'Pulse_generator' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/new/Pulse_generator.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Pulse_generator' (8#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/new/Pulse_generator.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Printer_uart' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/Printer_uart.sv:1]
+	Parameter N_T bound to: 32 - type: integer 
+	Parameter N_P bound to: 12 - type: integer 
+	Parameter N_CH bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_0' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.runs/synth_1/.Xil/Vivado-10128-LAPTOP-LB6J3CUA/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_0' (9#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.runs/synth_1/.Xil/Vivado-10128-LAPTOP-LB6J3CUA/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_time' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.runs/synth_1/.Xil/Vivado-10128-LAPTOP-LB6J3CUA/realtime/fifo_generator_time_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_time' (10#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.runs/synth_1/.Xil/Vivado-10128-LAPTOP-LB6J3CUA/realtime/fifo_generator_time_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Binary_to_BCD' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/binary_BCD.v:1]
+	Parameter INPUT_WIDTH bound to: 12 - type: integer 
+	Parameter DECIMAL_DIGITS bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Binary_to_BCD' (11#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/binary_BCD.v:1]
+INFO: [Synth 8-6157] synthesizing module 'uart' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart.sv:1]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+	Parameter FIFO_W bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'baud_gen' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/baud_gen.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'baud_gen' (12#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/baud_gen.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart_rx.sv:2]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart_rx.sv:47]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (13#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart_rx.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart_tx.sv:2]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart_tx.sv:52]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (14#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart_tx.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_uart' [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.runs/synth_1/.Xil/Vivado-10128-LAPTOP-LB6J3CUA/realtime/fifo_generator_uart_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_uart' (15#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.runs/synth_1/.Xil/Vivado-10128-LAPTOP-LB6J3CUA/realtime/fifo_generator_uart_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (16#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/uart.sv:1]
+WARNING: [Synth 8-7137] Register start_conversion_peak_reg in module Printer_uart has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/Printer_uart.sv:153]
+WARNING: [Synth 8-7137] Register Converter_peak_assigned_reg in module Printer_uart has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/Printer_uart.sv:154]
+WARNING: [Synth 8-7137] Register CONTROL_STATE_reg in module Printer_uart has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/Printer_uart.sv:158]
+WARNING: [Synth 8-7137] Register A_peak_event_reg_reg in module Printer_uart has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register A_peak_event_BCD_reg in module Printer_uart has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'A_peak_event_BCD_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "A_peak_event_BCD_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'A_peak_event_reg_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "A_peak_event_reg_reg" dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'Printer_uart' (17#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/imports/Sources_Muon_telescope/Printer_uart.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Sampler_top_module' (18#1) [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/new/Sampler_top_module.sv:1]
+WARNING: [Synth 8-7129] Port adc_data[3] in module adc_demux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_data[2] in module adc_demux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_data[1] in module adc_demux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_data[0] in module adc_demux is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1453.156 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1453.156 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1453.156 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1453.156 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[0].FIFO_PEAK'
+Finished Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[0].FIFO_PEAK'
+Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[1].FIFO_PEAK'
+Finished Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[1].FIFO_PEAK'
+Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[2].FIFO_PEAK'
+Finished Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[2].FIFO_PEAK'
+Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[3].FIFO_PEAK'
+Finished Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'UART_DISPLAY/fifo_peak_generation[3].FIFO_PEAK'
+Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.gen/sources_1/ip/fifo_generator_time/fifo_generator_time/fifo_generator_time_in_context.xdc] for cell 'UART_DISPLAY/FIFO_TIME'
+Finished Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.gen/sources_1/ip/fifo_generator_time/fifo_generator_time/fifo_generator_time_in_context.xdc] for cell 'UART_DISPLAY/FIFO_TIME'
+Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.gen/sources_1/ip/fifo_generator_uart/fifo_generator_uart/fifo_generator_uart_in_context.xdc] for cell 'UART_DISPLAY/UART_MODULE/fifo_rx_unit'
+Finished Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.gen/sources_1/ip/fifo_generator_uart/fifo_generator_uart/fifo_generator_uart_in_context.xdc] for cell 'UART_DISPLAY/UART_MODULE/fifo_rx_unit'
+Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.gen/sources_1/ip/fifo_generator_uart/fifo_generator_uart/fifo_generator_uart_in_context.xdc] for cell 'UART_DISPLAY/UART_MODULE/fifo_tx_unit'
+Finished Parsing XDC File [c:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.gen/sources_1/ip/fifo_generator_uart/fifo_generator_uart/fifo_generator_uart_in_context.xdc] for cell 'UART_DISPLAY/UART_MODULE/fifo_tx_unit'
+Parsing XDC File [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/constrs_1/imports/Sources_Muon_telescope/Arty-A7-35-Master.xdc]
+Finished Parsing XDC File [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/constrs_1/imports/Sources_Muon_telescope/Arty-A7-35-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.srcs/constrs_1/imports/Sources_Muon_telescope/Arty-A7-35-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Sampler_top_module_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Sampler_top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1471.723 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1471.723 ; gain = 0.000
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1471.723 ; gain = 18.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1471.723 ; gain = 18.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for UART_DISPLAY/\fifo_peak_generation[0].FIFO_PEAK . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_DISPLAY/\fifo_peak_generation[1].FIFO_PEAK . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_DISPLAY/\fifo_peak_generation[2].FIFO_PEAK . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_DISPLAY/\fifo_peak_generation[3].FIFO_PEAK . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_DISPLAY/FIFO_TIME. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_DISPLAY/UART_MODULE/fifo_rx_unit. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_DISPLAY/UART_MODULE/fifo_tx_unit. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1471.723 ; gain = 18.566
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'Binary_to_BCD'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'uart_rx'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'uart_tx'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'Printer_uart'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 | 00000000000000000000000000000000
+                   start |                               01 | 00000000000000000000000000000001
+                    data |                               10 | 00000000000000000000000000000010
+                    stop |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 | 00000000000000000000000000000000
+                   start |                               01 | 00000000000000000000000000000001
+                    data |                               10 | 00000000000000000000000000000010
+                    stop |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'uart_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                          0000001 | 00000000000000000000000000000000
+               FILL_TIME |                          0000010 | 00000000000000000000000000000010
+              FILL_PEAKS |                          0000100 | 00000000000000000000000000000011
+               SEND_TIME |                          0001000 | 00000000000000000000000000000001
+                BCD_PEAK |                          0010000 | 00000000000000000000000000000100
+               SEND_PEAK |                          0100000 | 00000000000000000000000000000101
+             FINAL_STATE |                          1000000 | 00000000000000000000000000000110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'Printer_uart'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1471.723 ; gain = 18.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   30 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 19    
+	   2 Input    3 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 5     
+	               12 Bit    Registers := 10    
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 7     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 11    
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 35    
++---Muxes : 
+	   7 Input   32 Bit        Muxes := 1     
+	   2 Input   20 Bit        Muxes := 1     
+	   7 Input   20 Bit        Muxes := 3     
+	   4 Input   20 Bit        Muxes := 1     
+	   7 Input   12 Bit        Muxes := 2     
+	   4 Input   12 Bit        Muxes := 2     
+	   2 Input   11 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 9     
+	   4 Input    8 Bit        Muxes := 1     
+	   7 Input    8 Bit        Muxes := 4     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 21    
+	   4 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
+	   7 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   7 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 58    
+	   7 Input    1 Bit        Muxes := 21    
+	   4 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1471.723 ; gain = 18.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 1471.723 ; gain = 18.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.723 ; gain = 18.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------+----------+
+|      |BlackBox name       |Instances |
++------+--------------------+----------+
+|1     |fifo_generator_0    |         4|
+|2     |fifo_generator_time |         1|
+|3     |fifo_generator_uart |         2|
++------+--------------------+----------+
+
+Report Cell Usage: 
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |fifo_generator      |     1|
+|2     |fifo_generator_0    |     3|
+|5     |fifo_generator_time |     1|
+|6     |fifo_generator_uart |     2|
+|8     |BUFG                |     1|
+|9     |CARRY4              |    24|
+|10    |LUT1                |     6|
+|11    |LUT2                |   149|
+|12    |LUT3                |    57|
+|13    |LUT4                |    76|
+|14    |LUT5                |    78|
+|15    |LUT6                |   165|
+|16    |XADC                |     1|
+|17    |FDCE                |   281|
+|18    |FDPE                |     2|
+|19    |FDRE                |   194|
+|20    |IBUF                |    20|
+|21    |OBUF                |     5|
++------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:54 . Memory (MB): peak = 1472.375 ; gain = 0.652
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1472.375 ; gain = 19.219
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1472.375 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 2 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.832 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: f4159297
+INFO: [Common 17-83] Releasing license: Synthesis
+67 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:04 ; elapsed = 00:01:12 . Memory (MB): peak = 1485.832 ; gain = 32.676
+INFO: [Common 17-1381] The checkpoint 'C:/Users/rikir/Documents/FPGA_projects/Sampler_XADC/Sampler_XADC.runs/synth_1/Sampler_top_module.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Sampler_top_module_utilization_synth.rpt -pb Sampler_top_module_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 14 13:10:10 2022...

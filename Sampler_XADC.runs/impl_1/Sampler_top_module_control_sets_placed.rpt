@@ -1,0 +1,142 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Mon Mar 14 13:11:20 2022
+| Host         : LAPTOP-LB6J3CUA running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Sampler_top_module_control_sets_placed.rpt
+| Design       : Sampler_top_module
+| Device       : xc7a35ti
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    64 |
+|    Minimum number of control sets                        |    64 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   199 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    64 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |    21 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     6 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |    14 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    21 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              17 |           11 |
+| No           | No                    | Yes                    |              98 |           33 |
+| No           | Yes                   | No                     |              76 |           25 |
+| Yes          | No                    | No                     |             161 |           54 |
+| Yes          | No                    | Yes                    |             177 |           57 |
+| Yes          | Yes                   | No                     |             360 |           90 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                                                                            Enable Signal                                                                            |                      Set/Reset Signal                      | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg_1                                                                                                                      | UART_DISPLAY/BINARY_BCD_PEAK/FSM_onehot_state_reg_reg[4]_3 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_BCD[0]                                                                                                                               |                                                            |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/FSM_onehot_state_reg_reg[4][0]                                                                                                         |                                                            |                4 |              4 |         1.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg_2[0]                                                                                                                   | UART_DISPLAY/BINARY_BCD_PEAK/FSM_onehot_state_reg_reg[4]_0 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg                                                                                                                        | UART_DISPLAY/BINARY_BCD_PEAK/FSM_onehot_state_reg_reg[4]_1 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/COUNTER_1m3Hz/E[0]                                                                                                                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/COUNTER_1m2Hz/carry_reg_reg_0[0]                                                                                                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/COUNTER_1e0Hz/carry_reg_reg_0[0]                                                                                                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/COUNTER_1m1Hz/carry_reg_reg_0[0]                                                                                                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/COUNTER_1e3Hz/carry_reg_reg_0[0]                                                                                                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/COUNTER_1e2Hz/carry_reg_reg_0[0]                                                                                                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/COUNTER_1e1Hz/carry_reg_reg_0[0]                                                                                                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | Time_Measurement/DIVISORE_1000Hz/E[0]                                                                                                                               | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/uart_tx_unit/s_next                                                                                                                        | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/uart_rx_unit/s_next                                                                                                                        | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_BCD[19]                                                                                                                              |                                                            |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_BCD[8]                                                                                                                               |                                                            |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_BCD[4]                                                                                                                               |                                                            |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_BCD[15]                                                                                                                              |                                                            |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg_0                                                                                                                      | UART_DISPLAY/BINARY_BCD_PEAK/FSM_onehot_state_reg_reg[4]_2 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_Digit_Index[4]_i_1_n_0                                                                                                               |                                                            |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | UART_DISPLAY/Printer                                                                                                                                                | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/FSM_onehot_state_reg[6]_i_1_n_0                                                                                                                        | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | UART_DISPLAY/counter_digit                                                                                                                                          | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG | UART_DISPLAY/counter_pause_peak_BCD                                                                                                                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/fifo_tx_unit/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]_0[0]          | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/E[0]                                                                                                                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_Loop_Count[7]_i_1_n_0                                                                                                                |                                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/uart_tx_unit/b_next_0                                                                                                                      | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/A_peak_event_reg[1][11]_i_1_n_0                                                                                                                        |                                                            |                2 |             12 |         6.00 |
+|  clk_IBUF_BUFG | XADC_WRAPPING_CIRCUIT/xadc_unit/inst_2[0]                                                                                                                           | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[1].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]_0[0] | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                2 |             12 |         6.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[2].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]_0[0] | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | XADC_WRAPPING_CIRCUIT/xadc_unit/inst_0[0]                                                                                                                           | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                2 |             12 |         6.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[0].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]_0[0] | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/r_Binary_0                                                                                                                             |                                                            |                2 |             12 |         6.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/Converter_peak                                                                                                                                         | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                6 |             12 |         2.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/A_peak_event_reg[3][11]_i_1_n_0                                                                                                                        |                                                            |                5 |             12 |         2.40 |
+|  clk_IBUF_BUFG | UART_DISPLAY/A_peak_event_reg[0][11]_i_1_n_0                                                                                                                        |                                                            |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG | XADC_WRAPPING_CIRCUIT/xadc_unit/inst_1[0]                                                                                                                           | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/A_peak_event_reg[2][11]_i_1_n_0                                                                                                                        |                                                            |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[3].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]_0[0] | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG | XADC_WRAPPING_CIRCUIT/xadc_unit/E[0]                                                                                                                                | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg_0                                                                                                                      |                                                            |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg                                                                                                                        |                                                            |                3 |             16 |         5.33 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg_2[0]                                                                                                                   |                                                            |                7 |             16 |         2.29 |
+|  clk_IBUF_BUFG | UART_DISPLAY/BINARY_BCD_PEAK/Print_pulse_reg_1                                                                                                                      |                                                            |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG |                                                                                                                                                                     |                                                            |               11 |             17 |         1.55 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[1].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                4 |             20 |         5.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[1].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/wr_en_0[0]                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[3].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/FIFO_TIME/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/E[0]                                                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG | UART_DISPLAY/FIFO_TIME/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/E[0]                                                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[0].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/wr_en_0[0]                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                4 |             20 |         5.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[0].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                4 |             20 |         5.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[3].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/wr_en_0[0]                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[2].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                 | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/fifo_peak_generation[2].FIFO_PEAK/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/wr_en_0[0]                                   | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/fifo_tx_unit/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                          | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                6 |             22 |         3.67 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/fifo_tx_unit/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/wr_en_0[0]                                            | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             22 |         4.40 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/fifo_rx_unit/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/wr_en_0[0]                                            | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                6 |             22 |         3.67 |
+|  clk_IBUF_BUFG | UART_DISPLAY/UART_MODULE/fifo_rx_unit/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                          | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                5 |             22 |         4.40 |
+|  clk_IBUF_BUFG | UART_DISPLAY/time_event_reg                                                                                                                                         | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG |                                                                                                                                                                     | UART_DISPLAY/UART_MODULE/uart_tx_unit/AR[0]                |               58 |            174 |         3.00 |
++----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+------------------+----------------+--------------+
+
+
